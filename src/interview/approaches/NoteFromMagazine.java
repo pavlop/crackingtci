@@ -2,10 +2,10 @@ package interview.approaches;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
-
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 /**
@@ -14,25 +14,25 @@ import static junit.framework.TestCase.assertTrue;
 public class NoteFromMagazine {
     public static boolean perform(String note, String magazine) throws Exception {
 
-        if(note == null || note.length()==0) return true;
-        if(magazine == null || magazine.length()==0) return false;
+        if (note == null || note.length() == 0) return true;
+        if (magazine == null || magazine.length() == 0) return false;
 
         String[] noteWords = note.split(" ");
-        StringTokenizer magazineTokenizer = new StringTokenizer(magazine," ");
+        StringTokenizer magazineTokenizer = new StringTokenizer(magazine, " ");
 
-        Map<String, Integer> magWordsCounts = new HashMap<String,Integer>();
+        Map<String, Integer> magWordsCounts = new HashMap<String, Integer>();
         while (magazineTokenizer.hasMoreElements()) {
             String magWord = magazineTokenizer.nextToken();
-            if(!magWordsCounts.containsKey(magWord)) {
-                magWordsCounts.put(magWord,1);
+            if (!magWordsCounts.containsKey(magWord)) {
+                magWordsCounts.put(magWord, 1);
             } else {
-                magWordsCounts.put(magWord, magWordsCounts.get(magWord)+1);
+                magWordsCounts.put(magWord, magWordsCounts.get(magWord) + 1);
             }
         }
 
-        for (String noteWord:noteWords) {
-            if (magWordsCounts.containsKey(noteWord) && magWordsCounts.get(noteWord)>0) {
-                magWordsCounts.put(noteWord, magWordsCounts.get(noteWord)-1);
+        for (String noteWord : noteWords) {
+            if (magWordsCounts.containsKey(noteWord) && magWordsCounts.get(noteWord) > 0) {
+                magWordsCounts.put(noteWord, magWordsCounts.get(noteWord) - 1);
             } else {
                 return false;
             }
