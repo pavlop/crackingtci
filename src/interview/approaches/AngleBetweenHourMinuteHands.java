@@ -27,7 +27,7 @@ public class AngleBetweenHourMinuteHands {
         assertEquals(150.0, AngleBetweenHourMinuteHands.perform(7, 00));
         assertEquals(67.5, AngleBetweenHourMinuteHands.perform(17, 15));
     }
-    
+
 }
 
 
