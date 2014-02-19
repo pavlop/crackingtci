@@ -2,10 +2,7 @@ package interview.datastructures;
 
 import org.junit.Test;
 
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -14,7 +11,9 @@ import static junit.framework.TestCase.assertTrue;
  */
 public class StringHasAllUnique {
     public static boolean perform(String str) throws Exception {
-        if (str == null) {return true;}
+        if (str == null) {
+            return true;
+        }
         char[] chars = str.toCharArray();
         HashSet<Character> uniqueChars = new HashSet<Character>();
 
