@@ -21,11 +21,16 @@ public class StringHasAllUniqueNoStructures {
     }
 
     static boolean isByteZero(int number, int position) {
-        System.out.println("isByteZero: input=" + Integer.toBinaryString(number));
-        //shift to the needed position
+        System.out.println("position = "+position+ " isByteZero: input=" + Integer.toBinaryString(number));
+        /* //shift to the needed position
         int shifted = number >> (position);
         System.out.println("isByteZero: after shifted=" + Integer.toBinaryString(shifted));
         return ((shifted % 2) == 0);
+        */
+
+        //imporvement
+        System.out.println("(number & (1<<position) = " + (number & (1<<position)));
+        return !((number & (1<<position)) >= 1);
     }
 
     static int addByteToPosition(int number, int position) {
