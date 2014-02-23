@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by pavlop on 2/16/14.
  */
-public class StringPermuatations {
+public class StringPermuatationsInsertions {
     public static Collection<String> perform(String str) throws Exception {
         /*
         1234    2134    ...

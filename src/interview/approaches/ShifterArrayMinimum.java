@@ -9,7 +9,6 @@ import static junit.framework.TestCase.assertEquals;
  */
 public class ShifterArrayMinimum {
     public static int perform(int array[]) throws Exception {
-
         return identifyRecursively(array, 0, array.length - 1);
     }
 
