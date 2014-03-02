@@ -1,4 +1,4 @@
-package interview.datastructures;
+package interview.arraysAndStrings;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class RemoveDuplicatesNoUseDataStructures {
     public static String perform(String str) {
 
         // this is a brute force solution
-        // Optimization: 
+        // Optimization:
         // if the order can be changed
         // you can always move chars from the tail
 

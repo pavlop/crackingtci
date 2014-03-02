@@ -1,6 +1,5 @@
-package interview.datastructures;
+package interview.arraysAndStrings;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.*;

@@ -1,4 +1,4 @@
-package interview.datastructures;
+package interview.arraysAndStrings;
 
 import org.junit.Test;
 
