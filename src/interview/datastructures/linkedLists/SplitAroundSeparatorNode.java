@@ -52,7 +52,6 @@ public class SplitAroundSeparatorNode {
     public void doTest() {
         MySinglyLinkedList<Integer> input = new MySinglyLinkedList<Integer>();
 
-        //input = Arrays.asList(new int[]{1, 2, 3});
         input.add(1); input.add(4); input.add(3);  input.add(5); input.add(6);input.add(2);
         Node<Integer> separator = input.head.next.next;//3
 
