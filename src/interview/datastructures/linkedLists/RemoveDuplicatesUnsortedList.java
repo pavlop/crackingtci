@@ -1,11 +1,8 @@
-package interview.linkedLists;
+package interview.datastructures.linkedLists;
 
-import com.sun.corba.se.spi.activation._InitialNameServiceImplBase;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * Created by pavlop on 2/27/14.
@@ -38,9 +35,9 @@ public class RemoveDuplicatesUnsortedList {
 
         //input = Arrays.asList(new int[]{1, 2, 3});
         input.add(1); input.add(1); input.add(2); input.add(2); input.add(3); input.add(3);
-        System.out.println("list"+MySinglyLinkedList.toJavaList(input.head));
+        assertEquals("[1, 1, 2, 2, 3, 3]", MySinglyLinkedList.toJavaList(input.head)+"");
         perform(input.head);
-        System.out.println("list after "+MySinglyLinkedList.toJavaList(input.head));
+        assertEquals("[1, 2, 3]", MySinglyLinkedList.toJavaList(input.head)+"");
     }
 }
 
