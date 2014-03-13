@@ -8,16 +8,32 @@ import java.util.List;
  */
 public class MySinglyLinkedList<T> {
     public Node<T> head;
+    public int length;
 
     public void add(T value) {
+        Node<T> toAdd = new Node<T>(value, null);
+        add(toAdd);
+    }
+
+    public void add (Node<T> node) {
         if(head == null) {
-            head = new Node<T>(value, null);
+            head = node;
         } else {
             Node cur = head;
             while (cur.next != null) {
                 cur = cur.next;
             }
-            cur.next = new Node<T>(value, null);
+            cur.next = node;
+        }
+        length++;
+    }
+
+    public void addToHead(T value) {
+        if(head == null) {
+            head = new Node<T>(value, null);
+        } else {
+            Node newHead = new Node<T>(value, head);
+            head = newHead;
         }
     }
 
@@ -43,11 +59,41 @@ public class MySinglyLinkedList<T> {
     public static <T> List<T> subList(Node<T> head, int len) {
         List <T> res = new ArrayList<T>();
         Node<T> cur = head;
-        for(int i  = 0; i < len; i++) {
+        for(int i  = 0; cur != null &&  i < len; i++) {
             res.add(cur.value);
             cur = cur.next;
         }
         return res;
+    }
+
+    public void reverseList() {
+        reverseList( this.head);
+    }
+
+    public static Node reverseList(Node head) {
+        Node cur = head;
+        Node previous = null;
+        if (cur == null) return null;
+
+        while (cur != null && cur.next != null) {
+            Node next = cur.next;
+            Node secondNext = next.next;
+
+            cur.next = previous;
+            next.next = cur;
+
+            previous = next;
+            cur = secondNext;
+        }
+
+        Node newhead;
+        if (cur != null) {
+            cur.next = previous;
+             newhead = cur;
+        } else {
+             newhead = previous;
+        }
+        return newhead;
     }
 
 }
@@ -59,6 +105,11 @@ class Node<T> {
     Node(T value, Node<T> next) {
         this.value = value;
         this.next = next;
+    }
+
+    Node(T value) {
+        this.value = value;
+        this.next = null;
     }
 
     public String toString(){
