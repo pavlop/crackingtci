@@ -1,0 +1,114 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class TileMatchTest {
+	
+	@Test
+	public void test0() {
+		String[] pattern = new String[] {"XXX",
+ "XXX",
+ "---"};
+		assertEquals(5, new TileMatch().uncolor(pattern));
+	}
+	
+	@Test
+	public void test1() {
+		String[] pattern = new String[] {"XXX",
+ "XXX",
+ "-X-"};
+		assertEquals(0, new TileMatch().uncolor(pattern));
+	}
+	
+	@Test
+	public void test2() {
+		String[] pattern = new String[] {"XXXX",
+ "XXXX",
+ "-X--",
+ "XX--"};
+		assertEquals(3, new TileMatch().uncolor(pattern));
+	}
+	
+	@Test
+	public void test3() {
+		String[] pattern = new String[] {"XX--",
+ "---X",
+ "X---",
+ "--X-"};
+		assertEquals(0, new TileMatch().uncolor(pattern));
+	}
+	
+	@Test
+	public void test4() {
+		String[] pattern = new String[] {"-XX-",
+ "XXXX",
+ "XXXX",
+ "---X"};
+		assertEquals(7, new TileMatch().uncolor(pattern));
+	}
+	
+	@Test
+	public void test5() {
+		String[] pattern = new String[] {"---X--",
+ "-----X",
+ "------",
+ "------",
+ "X-----",
+ "----X-"};
+		assertEquals(4, new TileMatch().uncolor(pattern));
+	}
+	
+	@Test
+	public void test6() {
+		String[] pattern = new String[] {"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"};
+		assertEquals(170, new TileMatch().uncolor(pattern));
+	}
+}
