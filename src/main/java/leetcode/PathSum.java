@@ -16,7 +16,8 @@ package leetcode;
 
  */
 public class PathSum {
-    public boolean hasPathSum(TreeNode root, int sum) {
+    public boolean hasPathSum(TreeNodePavel root, int sum) {
+        TreeNodePavel tnp = new TreeNodePavel(0);
         if(sum == 0) return true;
         boolean result = false;
         if(root != null && sum > 0) {
@@ -24,12 +25,19 @@ public class PathSum {
         }
         return result;
     }
+
+    public  class TreeNodePavel {
+        int val;
+        TreeNodePavel left;
+        TreeNodePavel right;
+        TreeNodePavel(int x) { val = x; }
+    }
+
+    public static void main(String s[]) {
+        PathSum ps = new PathSum();
+        ps.hasPathSum(ps.new TreeNodePavel(0), 0);
+    }
 }
 
-class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-     TreeNode(int x) { val = x; }
-}
+
 

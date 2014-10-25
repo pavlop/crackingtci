@@ -2,8 +2,6 @@ package leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 /**
  * Definition for a point.

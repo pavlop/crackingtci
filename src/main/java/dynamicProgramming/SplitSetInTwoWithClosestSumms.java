@@ -1,10 +1,7 @@
 package dynamicProgramming;
 
-import com.sun.jndi.url.corbaname.corbanameURLContextFactory;
-import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 import static junit.framework.Assert.assertSame;

@@ -26,7 +26,7 @@ public class SimplifyPath {
             String s = pathElements[i];
 
             if ("".equals(s) || ".".equals(s)) {continue;}
-            else if ("..".equals(s)) {
+            else if ("src/main".equals(s)) {
                 //if(!seenDirAfterRoot) continue;
                 if(directories.isEmpty()) directories.add(s);
                 else directories.pop();
@@ -40,7 +40,7 @@ public class SimplifyPath {
         StringBuilder sol = new StringBuilder();
         seenDirAfterRoot = false;
         for (String s:directories) {
-            if("..".equals(s) && !seenDirAfterRoot) continue;
+            if("src/main".equals(s) && !seenDirAfterRoot) continue;
             sol.append("/").append(s);
             seenDirAfterRoot = true;
         }
